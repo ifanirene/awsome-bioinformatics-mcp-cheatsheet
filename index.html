@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bioinformatics MCP Quick-Chart</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #fdfdfd; color: #333; }
+        table { border-collapse: collapse; width: 100%; box-shadow: 0 2px 3px rgba(0,0,0,0.1); }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f2f2f2; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #f1f1f1; }
+        a { text-decoration: none; color: #0645AD; }
+        a:hover { text-decoration: underline; }
+        h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+       .status-verified { color: #27ae60; font-weight: bold; }
+       .status-inaccessible { color: #c0392b; font-weight: bold; }
+       .status-no-stars { color: #7f8c8d; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h2>Bioinformatics / Computational-Biology MCP Servers Cheat-Sheet</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>MCP Name (link)</th>
+                <th>One-line Highlight + Typical Use</th>
+                <th>Underlying Database(s)</th>
+                <th>Tool Category</th>
+                <th>⭐ GitHub Stars</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="https://github.com/Augmented-Nature/Augmented-Nature-UniProt-MCP-Server" target="_blank">Augmented Nature UniProt</a></td>
+                <td>26 AI-ready protein tools (orthologs, 3-D, pathways). Use when you need deep UniProt knowledge via chat.</td>
+                <td>UniProt</td>
+                <td>Core Database</td>
+                <td>10</td>
+                <td class="status-verified">Verified</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/Augmented-Nature/Ensembl-MCP-Server" target="_blank">Augmented Nature Ensembl</a></td>
+                <td>25 tools for gene, variant & comparative queries. Ask “get FASTA for human BRCA1”.</td>
+                <td>Ensembl</td>
+                <td>Core Database</td>
+                <td>N/A</td>
+                <td class="status-inaccessible">Inaccessible</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/Augmented-Nature/PDB-MCP-Server" target="_blank">Augmented Nature PDB</a></td>
+                <td>AI-driven 3-D structure fetch & analysis. “Download all SARS-CoV-2 spike models.”</td>
+                <td>Protein Data Bank (PDB)</td>
+                <td>Core Database</td>
+                <td>10</td>
+                <td class="status-verified">Verified</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/Augmented-Nature/AlphaFold-MCP-Server" target="_blank">Augmented Nature AlphaFold</a></td>
+                <td>Predicted protein structures & confidence scores. Ideal for proteins lacking crystal data.</td>
+                <td>AlphaFold Protein Structure Database</td>
+                <td>Core Database</td>
+                <td>22</td>
+                <td class="status-verified">Verified</td>
+            </tr>
+
+            <tr>
+                <td><a href="https://github.com/longevity-genie/gget-mcp" target="_blank">gget-mcp</a></td>
+                <td>Swiss-army genomics toolkit (BLAST, ARCHS4, AlphaFold, COSMIC). One-liner RNA-seq QC.</td>
+                <td>Ensembl, NCBI, ARCHS4, COSMIC, PDB, AlphaFold, many more</td>
+                <td>Toolkit Wrapper</td>
+                <td>6</td>
+                <td class="status-verified">Verified</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/longevity-genie/opengenes-mcp" target="_blank">opengenes-mcp</a></td>
+                <td>Natural-language longevity gene queries backed by SQL. “Find CSF1R variants extending lifespan.”</td>
+                <td>OpenGenes</td>
+                <td>Specialized DB (Aging)</td>
+                <td>7</td>
+                <td class="status-verified">Verified</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/longevity-genie/biothings-mcp" target="_blank">biothings-mcp</a></td>
+                <td>Single API for MyGene, MyVariant, MyChem. Perfect for multi-omics look-ups in one call.</td>
+                <td>BioThings.io (MyGene, MyVariant, MyChem)</td>
+                <td>Meta-API</td>
+                <td>19</td>
+                <td class="status-verified">Verified</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/longevity-genie/pharmacology-mcp" target="_blank">pharmacology-mcp</a></td>
+                <td>AI access to Guide to PHARMACOLOGY—drug targets, ligands, interactions.</td>
+                <td>Guide to PHARMACOLOGY</td>
+                <td>Drug DB</td>
+                <td>N/A</td>
+                <td class="status-inaccessible">Inaccessible</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/longevity-genie/synergy-age-mcp" target="_blank">synergy-age-mcp</a></td>
+                <td>Query synergistic gene–longevity interactions for combinatorial therapy design.</td>
+                <td>SynergyAge</td>
+                <td>Specialized DB (Aging)</td>
+                <td>5</td>
+                <td class="status-verified">Verified</td>
+            </tr>
+
+            <tr>
+                <td><a href="https://github.com/bio-mcp/bio-mcp-blast" target="_blank">bio-mcp-blast</a></td>
+                <td>Run BLAST locally or cloud via AI; supports custom DB creation.</td>
+                <td>NCBI BLAST</td>
+                <td>Sequence Search</td>
+                <td>3</td>
+                <td class="status-verified">Verified</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/bio-mcp/bio-mcp-bwa" target="_blank">bio-mcp-bwa</a></td>
+                <td>AI wrapper for BWA aligner. Index genomes, align reads, get SAM/BAM output.</td>
+                <td>BWA</td>
+                <td>Sequence Alignment</td>
+                <td>0</td>
+                <td class="status-no-stars">No Stars</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/bio-mcp/bioconda-mcp-server" target="_blank">BioConda-MCP</a></td>
+                <td>AI installs bio software on-the-fly from BioConda. “Install salmon for quantification.”</td>
+                <td>BioConda repository</td>
+                <td>Package Management</td>
+                <td>N/A</td>
+                <td class="status-inaccessible">Inaccessible</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/bio-mcp/bionext-mcp" target="_blank">BioNext-MCP</a></td>
+                <td>High-level workflow orchestrator; chains SeqKit → BWA → samtools automatically.</td>
+                <td>Bio-MCP ecosystem</td>
+                <td>Workflow Orchestrator</td>
+                <td>N/A</td>
+                <td class="status-inaccessible">Inaccessible</td>
+            </tr>
+
+            <tr>
+                <td><a href="https://github.com/hamzameer/mcp-ncbi" target="_blank">NCBI MCP Server</a></td>
+                <td>AI agentic access to full NCBI suite: PubMed, GenBank, BLAST, Assembly, etc.</td>
+                <td>NCBI E-utilities & BLAST</td>
+                <td>Meta-API</td>
+                <td>N/A</td>
+                <td class="status-inaccessible">Inaccessible</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/MCPmed/GEO_MCP" target="_blank">GEO MCP</a></td>
+                <td>Autonomous GEO dataset discovery; AI refines queries iteratively when initial search fails.</td>
+                <td>NCBI GEO</td>
+                <td>Expression DB</td>
+                <td>N/A</td>
+                <td class="status-inaccessible">Inaccessible</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
