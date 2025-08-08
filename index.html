@@ -1,161 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Bioinformatics MCP Quick-Chart</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; background-color: #fdfdfd; color: #333; }
-        table { border-collapse: collapse; width: 100%; box-shadow: 0 2px 3px rgba(0,0,0,0.1); }
-        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-        th { background-color: #f2f2f2; font-weight: bold; }
-        tr:nth-child(even) { background-color: #f9f9f9; }
-        tr:hover { background-color: #f1f1f1; }
-        a { text-decoration: none; color: #0645AD; }
-        a:hover { text-decoration: underline; }
-        h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-       .status-verified { color: #27ae60; font-weight: bold; }
-       .status-inaccessible { color: #c0392b; font-weight: bold; }
-       .status-no-stars { color: #7f8c8d; font-weight: bold; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bioinformatics MCP Quick-Chart — Updated (Aug 7 2025)</title>
+  <style>
+    :root{--bg:#fff;--text:#111;--muted:#555;--line:#ddd;--th:#f6f6f6;--link:#0645AD}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+              font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    .wrap{max-width:1100px;margin:32px auto;padding:0 16px}
+    h1{font-size:1.6rem;margin:0 0 6px}
+    .sub{color:var(--muted);margin:0 0 10px}
+    .legend{margin:6px 0 18px;color:#333;font-size:.92rem}
+    .legend code{background:#f7f7f7;border:1px solid var(--line);padding:2px 6px;border-radius:6px;
+                 margin:2px 6px 2px 0;display:inline-block}
+    table{border-collapse:collapse;width:100%;box-shadow:0 1px 0 var(--line) inset}
+    th,td{border:1px solid var(--line);padding:10px;vertical-align:top;text-align:left}
+    th{background:var(--th)}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .note{margin-top:14px;font-size:.92rem;color:var(--muted)}
+    .tag{display:inline-block;border:1px solid var(--line);padding:.1rem .4rem;border-radius:6px;
+         margin-left:.4rem;font-size:.78rem;color:#333;background:#fafafa}
+    footer{margin:22px 0 40px;color:#666;font-size:.9rem}
+  </style>
 </head>
 <body>
-    <h2>Bioinformatics / Computational-Biology MCP Servers Cheat-Sheet</h2>
+  <div class="wrap">
+    <h1>Bioinformatics / Computational-Biology MCP Servers Cheat-Sheet</h1>
+    <p class="sub">Links verified <strong>Aug 7 2025</strong></p>
+
+    <div class="legend">
+      <strong>Categories:</strong>
+      <code>Core&nbsp;DB</code><code>Specialized&nbsp;DB</code><code>Analysis&nbsp;Tool</code>
+      <code>Workflow</code><code>Package&nbsp;Manager</code>
+      <code>Literature/Clinical</code><code>Infrastructure</code>
+    </div>
+
     <table>
-        <thead>
-            <tr>
-                <th>MCP Name (link)</th>
-                <th>One-line Highlight + Typical Use</th>
-                <th>Underlying Database(s)</th>
-                <th>Tool Category</th>
-                <th>⭐ GitHub Stars</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><a href="https://github.com/Augmented-Nature/Augmented-Nature-UniProt-MCP-Server" target="_blank">Augmented Nature UniProt</a></td>
-                <td>26 AI-ready protein tools (orthologs, 3-D, pathways). Use when you need deep UniProt knowledge via chat.</td>
-                <td>UniProt</td>
-                <td>Core Database</td>
-                <td>10</td>
-                <td class="status-verified">Verified</td>
-            </tr>
-            <tr>
-                <td><a href="https://github.com/Augmented-Nature/Ensembl-MCP-Server" target="_blank">Augmented Nature Ensembl</a></td>
-                <td>25 tools for gene, variant & comparative queries. Ask “get FASTA for human BRCA1”.</td>
-                <td>Ensembl</td>
-                <td>Core Database</td>
-                <td>N/A</td>
-                <td class="status-inaccessible">Inaccessible</td>
-            </tr>
-            <tr>
-                <td><a href="https://github.com/Augmented-Nature/PDB-MCP-Server" target="_blank">Augmented Nature PDB</a></td>
-                <td>AI-driven 3-D structure fetch & analysis. “Download all SARS-CoV-2 spike models.”</td>
-                <td>Protein Data Bank (PDB)</td>
-                <td>Core Database</td>
-                <td>10</td>
-                <td class="status-verified">Verified</td>
-            </tr>
-            <tr>
-                <td><a href="https://github.com/Augmented-Nature/AlphaFold-MCP-Server" target="_blank">Augmented Nature AlphaFold</a></td>
-                <td>Predicted protein structures & confidence scores. Ideal for proteins lacking crystal data.</td>
-                <td>AlphaFold Protein Structure Database</td>
-                <td>Core Database</td>
-                <td>22</td>
-                <td class="status-verified">Verified</td>
-            </tr>
+      <thead>
+        <tr>
+          <th>MCP Name (link)</th>
+          <th>One-line Highlight + Typical Use</th>
+          <th>Underlying Database(s)</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody>
 
-            <tr>
-                <td><a href="https://github.com/longevity-genie/gget-mcp" target="_blank">gget-mcp</a></td>
-                <td>Swiss-army genomics toolkit (BLAST, ARCHS4, AlphaFold, COSMIC). One-liner RNA-seq QC.</td>
-                <td>Ensembl, NCBI, ARCHS4, COSMIC, PDB, AlphaFold, many more</td>
-                <td>Toolkit Wrapper</td>
-                <td>6</td>
-                <td class="status-verified">Verified</td>
-            </tr>
-            <tr>
-                <td><a href="https://github.com/longevity-genie/opengenes-mcp" target="_blank">opengenes-mcp</a></td>
-                <td>Natural-language longevity gene queries backed by SQL. “Find CSF1R variants extending lifespan.”</td>
-                <td>OpenGenes</td>
-                <td>Specialized DB (Aging)</td>
-                <td>7</td>
-                <td class="status-verified">Verified</td>
-            </tr>
-            <tr>
-                <td><a href="https://github.com/longevity-genie/biothings-mcp" target="_blank">biothings-mcp</a></td>
-                <td>Single API for MyGene, MyVariant, MyChem. Perfect for multi-omics look-ups in one call.</td>
-                <td>BioThings.io (MyGene, MyVariant, MyChem)</td>
-                <td>Meta-API</td>
-                <td>19</td>
-                <td class="status-verified">Verified</td>
-            </tr>
-            <tr>
-                <td><a href="https://github.com/longevity-genie/pharmacology-mcp" target="_blank">pharmacology-mcp</a></td>
-                <td>AI access to Guide to PHARMACOLOGY—drug targets, ligands, interactions.</td>
-                <td>Guide to PHARMACOLOGY</td>
-                <td>Drug DB</td>
-                <td>N/A</td>
-                <td class="status-inaccessible">Inaccessible</td>
-            </tr>
-            <tr>
-                <td><a href="https://github.com/longevity-genie/synergy-age-mcp" target="_blank">synergy-age-mcp</a></td>
-                <td>Query synergistic gene–longevity interactions for combinatorial therapy design.</td>
-                <td>SynergyAge</td>
-                <td>Specialized DB (Aging)</td>
-                <td>5</td>
-                <td class="status-verified">Verified</td>
-            </tr>
+        <!-- Augmented Nature Suite -->
+        <tr>
+          <td><a href="https://github.com/Augmented-Nature/Augmented-Nature-UniProt-MCP-Server" target="_blank" rel="noopener">Augmented Nature UniProt</a></td>
+          <td>26 AI-ready protein tools (orthologs, structures, pathways); ask detailed UniProt queries via chat.</td>
+          <td>UniProt</td>
+          <td>Core DB</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/Augmented-Nature/Ensembl-MCP-Server" target="_blank" rel="noopener">Augmented Nature Ensembl</a></td>
+          <td>25 tools for gene, variant &amp; comparative genomics; e.g. “get FASTA for human BRCA1”.</td>
+          <td>Ensembl</td>
+          <td>Core DB</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/Augmented-Nature/PDB-MCP-Server" target="_blank" rel="noopener">Augmented Nature PDB</a></td>
+          <td>AI-driven 3-D structure fetch &amp; analysis; download all structures for a protein family in one step.</td>
+          <td>PDB</td>
+          <td>Core DB</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/Augmented-Nature/AlphaFold-MCP-Server" target="_blank" rel="noopener">Augmented Nature AlphaFold</a></td>
+          <td>Retrieve predicted structures &amp; confidence scores for proteins lacking crystal data.</td>
+          <td>AlphaFold DB</td>
+          <td>Core DB</td>
+        </tr>
 
-            <tr>
-                <td><a href="https://github.com/bio-mcp/bio-mcp-blast" target="_blank">bio-mcp-blast</a></td>
-                <td>Run BLAST locally or cloud via AI; supports custom DB creation.</td>
-                <td>NCBI BLAST</td>
-                <td>Sequence Search</td>
-                <td>3</td>
-                <td class="status-verified">Verified</td>
-            </tr>
-            <tr>
-                <td><a href="https://github.com/bio-mcp/bio-mcp-bwa" target="_blank">bio-mcp-bwa</a></td>
-                <td>AI wrapper for BWA aligner. Index genomes, align reads, get SAM/BAM output.</td>
-                <td>BWA</td>
-                <td>Sequence Alignment</td>
-                <td>0</td>
-                <td class="status-no-stars">No Stars</td>
-            </tr>
-            <tr>
-                <td><a href="https://github.com/bio-mcp/bioconda-mcp-server" target="_blank">BioConda-MCP</a></td>
-                <td>AI installs bio software on-the-fly from BioConda. “Install salmon for quantification.”</td>
-                <td>BioConda repository</td>
-                <td>Package Management</td>
-                <td>N/A</td>
-                <td class="status-inaccessible">Inaccessible</td>
-            </tr>
-            <tr>
-                <td><a href="https://github.com/bio-mcp/bionext-mcp" target="_blank">BioNext-MCP</a></td>
-                <td>High-level workflow orchestrator; chains SeqKit → BWA → samtools automatically.</td>
-                <td>Bio-MCP ecosystem</td>
-                <td>Workflow Orchestrator</td>
-                <td>N/A</td>
-                <td class="status-inaccessible">Inaccessible</td>
-            </tr>
+        <!-- Holy-Bio / Longevity-Genie -->
+        <tr>
+          <td><a href="https://github.com/longevity-genie/gget-mcp" target="_blank" rel="noopener">gget-mcp</a></td>
+          <td>Swiss-army genomics toolkit (BLAST, ARCHS4, COSMIC); single-line RNA-seq QC.</td>
+          <td>Mixed (NCBI, ARCHS4, COSMIC…)</td>
+          <td>Analysis Tool</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/longevity-genie/opengenes-mcp" target="_blank" rel="noopener">opengenes-mcp</a></td>
+          <td>Natural-language longevity-gene queries; e.g. “find CSF1R variants extending lifespan”.</td>
+          <td>OpenGenes</td>
+          <td>Specialized DB</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/longevity-genie/biothings-mcp" target="_blank" rel="noopener">biothings-mcp</a></td>
+          <td>Single API for MyGene, MyVariant, MyChem — perfect for multi-omics look-ups.</td>
+          <td>BioThings.io</td>
+          <td>Analysis Tool</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/longevity-genie/pharmacology-mcp" target="_blank" rel="noopener">pharmacology-mcp</a></td>
+          <td>Chat access to Guide to PHARMACOLOGY — drug targets, ligands, interactions.</td>
+          <td>Guide to PHARMACOLOGY</td>
+          <td>Specialized DB</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/longevity-genie/synergy-age-mcp" target="_blank" rel="noopener">synergy-age-mcp</a></td>
+          <td>Query synergistic gene–longevity interactions for combinatorial therapy design.</td>
+          <td>SynergyAge</td>
+          <td>Specialized DB</td>
+        </tr>
 
-            <tr>
-                <td><a href="https://github.com/hamzameer/mcp-ncbi" target="_blank">NCBI MCP Server</a></td>
-                <td>AI agentic access to full NCBI suite: PubMed, GenBank, BLAST, Assembly, etc.</td>
-                <td>NCBI E-utilities & BLAST</td>
-                <td>Meta-API</td>
-                <td>N/A</td>
-                <td class="status-inaccessible">Inaccessible</td>
-            </tr>
-            <tr>
-                <td><a href="https://github.com/MCPmed/GEO_MCP" target="_blank">GEO MCP</a></td>
-                <td>Autonomous GEO dataset discovery; AI refines queries iteratively when initial search fails.</td>
-                <td>NCBI GEO</td>
-                <td>Expression DB</td>
-                <td>N/A</td>
-                <td class="status-inaccessible">Inaccessible</td>
-            </tr>
-        </tbody>
+        <!-- Bio-MCP core tools -->
+        <tr>
+          <td><a href="https://github.com/bio-mcp/bio-mcp-blast" target="_blank" rel="noopener">bio-mcp-blast</a></td>
+          <td>Run BLAST locally/cloud via AI; supports custom DB creation.</td>
+          <td>NCBI BLAST</td>
+          <td>Analysis Tool</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/bio-mcp/bio-mcp-bwa" target="_blank" rel="noopener">bio-mcp-bwa</a></td>
+          <td>AI-triggered read alignment (BWA-MEM) to reference genomes.</td>
+          <td>BWA</td>
+          <td>Analysis Tool</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/bio-mcp/bio-mcp-samtools" target="_blank" rel="noopener">bio-mcp-samtools</a></td>
+          <td>AI-driven SAM/BAM manipulation (sort, index, stats).</td>
+          <td>SAMtools</td>
+          <td>Analysis Tool</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/bio-mcp/bio-mcp-seqkit" target="_blank" rel="noopener">bio-mcp-seqkit</a></td>
+          <td>Ultrafast FASTA/FASTQ manipulation; great for pre-alignment QC.</td>
+          <td>SeqKit</td>
+          <td>Analysis Tool</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/bio-mcp/bio-mcp-queue" target="_blank" rel="noopener">bio-mcp-queue</a></td>
+          <td>Redis-Celery job queue for long-running tasks; plug other Bio-MCP tools in.</td>
+          <td>Redis / Celery</td>
+          <td>Infrastructure</td>
+        </tr>
+
+        <!-- Population & interaction DBs -->
+        <tr>
+          <td><a href="https://github.com/koido/gnomad-mcp" target="_blank" rel="noopener">gnomAD MCP</a></td>
+          <td>Query population allele frequencies &amp; variant annotations across gnomAD versions.</td>
+          <td>gnomAD</td>
+          <td>Specialized DB</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/koido/gwas-catalog-mcp" target="_blank" rel="noopener">GWAS Catalog MCP</a></td>
+          <td>Instantly pull published GWAS hits for any trait or gene.</td>
+          <td>GWAS Catalog</td>
+          <td>Specialized DB</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/kleonai/biogrid-mcp-server" target="_blank" rel="noopener">BioGRID MCP</a></td>
+          <td>AI queries of protein &amp; genetic interaction networks.</td>
+          <td>BioGRID</td>
+          <td>Specialized DB</td>
+        </tr>
+
+        <!-- Literature / clinical -->
+        <tr>
+          <td><a href="https://github.com/JackKuo666/PubMed-MCP-Server" target="_blank" rel="noopener">PubMed MCP</a></td>
+          <td>Natural-language literature mining — fetch abstracts, MeSH terms, citation counts.</td>
+          <td>PubMed</td>
+          <td>Literature/Clinical</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/JackKuo666/ClinicalTrials-MCP-Server" target="_blank" rel="noopener">ClinicalTrials.gov MCP</a></td>
+          <td>Search trials by drug, condition, location; keeps conversational context.</td>
+          <td>ClinicalTrials.gov</td>
+          <td>Literature/Clinical</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/BioMCP-Hub/PubTator-MCP-Server" target="_blank" rel="noopener">PubTator MCP</a></td>
+          <td>Pre-annotated biomedical entities (genes, diseases, chemicals) from PubMed texts.</td>
+          <td>PubTator Central</td>
+          <td>Literature/Clinical</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/JackKuo666/bioRxiv-MCP-Server" target="_blank" rel="noopener">bioRxiv MCP</a></td>
+          <td>Monitor latest preprints; AI alerts for new papers matching given topics.</td>
+          <td>bioRxiv &amp; medRxiv</td>
+          <td>Literature/Clinical</td>
+        </tr>
+
+        <!-- Drug & target -->
+        <tr>
+          <td><a href="https://github.com/gosset-ai/mcps" target="_blank" rel="noopener">DrugBank MCP</a></td>
+          <td>Deep drug &amp; interaction look-ups (requires DrugBank API key).</td>
+          <td>DrugBank</td>
+          <td>Specialized DB</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/Augmented-Nature/OpenTargets-MCP-Server" target="_blank" rel="noopener">OpenTargets MCP</a></td>
+          <td>AI-driven target ID &amp; prioritization using genetics &amp; pathway evidence.</td>
+          <td>OpenTargets</td>
+          <td>Specialized DB</td>
+        </tr>
+
+        <!-- Platforms & workflows -->
+        <tr>
+          <td><a href="https://github.com/galaxyproject/galaxy-mcp" target="_blank" rel="noopener">Galaxy MCP</a></td>
+          <td>AI control of Galaxy workflows, tools, histories — e.g. “run RNA-seq pipeline on dataset X”.</td>
+          <td>Galaxy Platform</td>
+          <td>Workflow</td>
+        </tr>
+        <tr>
+          <td><a href="https://mcp.so/server/Bioconda-MCP-Server/JackKuo666" target="_blank" rel="noopener">BioConda MCP</a></td>
+          <td>AI installs bio-software on-the-fly from BioConda.</td>
+          <td>BioConda</td>
+          <td>Package Manager</td>
+        </tr>
+        <tr>
+          <td><a href="https://lobehub.com/mcp/your-username-bionext-mcp" target="_blank" rel="noopener">BioNext MCP</a></td>
+          <td>High-level workflow orchestrator chaining SeqKit → BWA → SAMtools automatically.</td>
+          <td>Bio-MCP ecosystem</td>
+          <td>Workflow</td>
+        </tr>
+
+        <!-- General / GEO -->
+        <tr>
+          <td><a href="https://lobehub.com/bg/mcp/hamzameer-ncbi-mcp-server" target="_blank" rel="noopener">NCBI MCP Server</a></td>
+          <td>Agentic access to the full NCBI suite: PubMed, GenBank, BLAST, Assembly, etc.</td>
+          <td>NCBI E-utilities &amp; BLAST</td>
+          <td>Analysis Tool</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/MCPmed/GEOmcp" target="_blank" rel="noopener">GEO MCP</a></td>
+          <td>Autonomous GEO dataset discovery; iteratively refines queries when initial search fails.</td>
+          <td>NCBI GEO</td>
+          <td>Specialized DB</td>
+        </tr>
+
+        <!-- NEW: MCPmed additions -->
+        <tr>
+          <td><a href="https://github.com/MCPmed/PLSDB-MCP" target="_blank" rel="noopener">PLSDB MCP</a></td>
+          <td>Search plasmid sequences &amp; metadata; useful for tracking AMR plasmids.</td>
+          <td>PLSDB</td>
+          <td>Specialized DB</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/MCPmed/STRING-MCP" target="_blank" rel="noopener">STRING MCP</a></td>
+          <td>Query protein–protein interaction networks with confidence scores.</td>
+          <td>STRING</td>
+          <td>Specialized DB</td>
+        </tr>
+
+      </tbody>
     </table>
+
+    <p class="note">
+      <span class="tag">GitHub-star column removed for clarity.</span>
+      <span class="tag">Categories collapsed to seven high-level groups.</span>
+    </p>
+
+    <footer>
+      Built for quick reference — PRs welcome.
+    </footer>
+  </div>
 </body>
 </html>
